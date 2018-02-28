@@ -1,24 +1,19 @@
+[![Build Status](https://travis-ci.org/yu-san-19/redirect-next-event.svg?branch=master)](https://travis-ci.org/yu-san-19/redirect-next-event)
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+# Redirect next event
 
+Connpass のAPIをたたいて最新のイベントにリダイレクトさせるだけ。
 
-Welcome to your Rails project on Cloud9 IDE!
+## 仕組み
 
-To get started, just do the following:
+クエリを以下に設定して
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://HOSTNAME/).
+https://connpass.com/api/v1/event/?series_id=3786&order=1&keyword=CoderDojo+%E5%B2%A1%E5%B1%B1+%E5%B2%A1%E5%8D%97
 
-Happy coding!
-The Cloud9 IDE team
+GETで帰ってきたやつの中からURLと日時を取得して
 
+その日よりも先にあるイベントがあったらそのイベントにリダイレクトさせる
 
-## Support & Documentation
+なかったら準備中ページにリダイレクトさせる
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+おそらくRails使う必要なかった。（最初はもっと規模を大きくするつもりだったから今後大きくするかも。）
